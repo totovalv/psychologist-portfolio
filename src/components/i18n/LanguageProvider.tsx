@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-  useCallback,
-} from "react";
+import { createContext, useContext, useMemo, useState, useCallback } from "react";
 import type { Lang } from "@/lib/i18n";
 
 type Ctx = { lang: Lang; setLang: (l: Lang) => void; toggle: () => void };
@@ -15,10 +9,7 @@ const LangCtx = createContext<Ctx | null>(null);
 export function LanguageProvider({
   initialLang,
   children,
-}: {
-  initialLang: Lang;
-  children: React.ReactNode;
-}) {
+}: { initialLang: Lang; children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>(initialLang);
 
   const setLang = useCallback((l: Lang) => {
@@ -33,10 +24,8 @@ export function LanguageProvider({
     setLang(next);
   }, [lang, setLang]);
 
-  const value = useMemo(
-    () => ({ lang, setLang, toggle }),
-    [lang, setLang, toggle]
-  );
+  // include BOTH functions in deps to satisfy react-hooks/exhaustive-deps
+  const value = useMemo(() => ({ lang, setLang, toggle }), [lang, setLang, toggle]);
 
   return <LangCtx.Provider value={value}>{children}</LangCtx.Provider>;
 }

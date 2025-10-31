@@ -1,4 +1,5 @@
 export type Lang = "en" | "es";
+export type Translations = (typeof dict)[Lang];
 
 export const dict = {
   en: {
@@ -13,8 +14,7 @@ export const dict = {
     ctaPrimary: "Book a consultation",
     hero: {
       title: "Compassionate, evidence-based therapy",
-      lead:
-        "Helping adults navigate anxiety, depression, burnout, and life transitions. In-person in Valencia & secure online sessions.",
+      lead: "Helping adults navigate anxiety, depression, burnout, and life transitions. In-person in Valencia & secure online sessions.",
       getInTouch: "Get in touch",
       explore: "Explore services",
       bullets: [
@@ -69,9 +69,21 @@ export const dict = {
     approach: {
       title: "How therapy works",
       steps: [
-        { step: "01", title: "Discovery", text: "Free 15-min call to clarify needs & fit." },
-        { step: "02", title: "Assessment", text: "First 1–2 sessions map patterns & goals." },
-        { step: "03", title: "Treatment", text: "Weekly sessions + brief home practices." },
+        {
+          step: "01",
+          title: "Discovery",
+          text: "Free 15-min call to clarify needs & fit.",
+        },
+        {
+          step: "02",
+          title: "Assessment",
+          text: "First 1–2 sessions map patterns & goals.",
+        },
+        {
+          step: "03",
+          title: "Treatment",
+          text: "Weekly sessions + brief home practices.",
+        },
       ],
     },
     testimonials: {
@@ -84,8 +96,7 @@ export const dict = {
     },
     contact: {
       title: "Contact",
-      lead:
-        "Fill the form to request availability. I typically reply within 24 hours.",
+      lead: "Fill the form to request availability. I typically reply within 24 hours.",
       phone: "+34 960 000 000",
       email: "hello@drjanedoe.com",
       location: "Valencia & Online",
@@ -116,8 +127,7 @@ export const dict = {
     ctaPrimary: "Reservar una consulta",
     hero: {
       title: "Terapia compasiva y basada en la evidencia",
-      lead:
-        "Acompaño a adultos con ansiedad, depresión, burnout y transiciones vitales. Sesiones presenciales en Valencia y online de forma segura.",
+      lead: "Acompaño a adultos con ansiedad, depresión, burnout y transiciones vitales. Sesiones presenciales en Valencia y online de forma segura.",
       getInTouch: "Escríbeme",
       explore: "Ver servicios",
       bullets: [
@@ -134,8 +144,7 @@ export const dict = {
       items: [
         {
           title: "Ansiedad y Estrés",
-          desc:
-            "TCC y mindfulness para reducir preocupación, rumiación y pánico.",
+          desc: "TCC y mindfulness para reducir preocupación, rumiación y pánico.",
         },
         {
           title: "Depresión",
@@ -161,10 +170,8 @@ export const dict = {
     },
     about: {
       title: "Sobre la Dra. Florencia Ferrandino Lamarca",
-      p1:
-        "Psicóloga sanitaria (PhD, Universidad de Barcelona). Más de 10 años acompañando a adultos con TCC, ACT y terapia focalizada en la compasión. Colegiada en COPCV.",
-      p2:
-        "Creo que el cambio ocurre en un espacio seguro y colaborativo. Definiremos objetivos claros, haremos seguimiento y practicaremos habilidades entre sesiones.",
+      p1: "Psicóloga sanitaria (PhD, Universidad de Barcelona). Más de 10 años acompañando a adultos con TCC, ACT y terapia focalizada en la compasión. Colegiada en COPCV.",
+      p2: "Creo que el cambio ocurre en un espacio seguro y colaborativo. Definiremos objetivos claros, haremos seguimiento y practicaremos habilidades entre sesiones.",
       stats: {
         years: "Años de experiencia",
         avg: "Sesiones promedio",
@@ -178,8 +185,7 @@ export const dict = {
         {
           step: "01",
           title: "Toma de contacto",
-          text:
-            "Llamada gratuita de 15 min para aclarar necesidad y encaje.",
+          text: "Llamada gratuita de 15 min para aclarar necesidad y encaje.",
         },
         {
           step: "02",
@@ -203,8 +209,7 @@ export const dict = {
     },
     contact: {
       title: "Contacto",
-      lead:
-        "Completa el formulario para solicitar disponibilidad. Suelo responder en 24 horas.",
+      lead: "Completa el formulario para solicitar disponibilidad. Suelo responder en 24 horas.",
       phone: "+34 960 000 000",
       email: "hello@drjanedoe.com",
       location: "Valencia y Online",
@@ -222,8 +227,6 @@ export const dict = {
       "Psicoterapia basada en la evidencia para ansiedad, depresión y transiciones vitales. Presencial y online.",
   },
 } as const;
-
-export type Translations = (typeof dict)[Lang];
 
 export function getInitialLang(): Lang {
   if (typeof window === "undefined") return "en";
