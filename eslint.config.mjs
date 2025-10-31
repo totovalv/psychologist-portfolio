@@ -20,6 +20,18 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      // allow explicit `any`
+      "@typescript-eslint/no-explicit-any": "off",
+
+      // (optional) loosen a couple more if you want:
+      // "@typescript-eslint/ban-ts-comment": "off",
+      // "@typescript-eslint/no-unsafe-assignment": "off",
+      // "@typescript-eslint/no-unsafe-member-access": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
