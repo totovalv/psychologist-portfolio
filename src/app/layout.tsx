@@ -6,11 +6,11 @@ const geist = Geist({ subsets: ["latin"] });
 const geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dr. Jane Doe | Psychologist",
+  title: "Dra. Florencia Ferrandino Lamarca | Psychologist",
   description:
     "Evidence-based psychotherapy for anxiety, depression, and life transitions. In-person & online sessions.",
   openGraph: {
-    title: "Dr. Jane Doe | Psychologist",
+    title: "Dra. Florencia Ferrandino Lamarca | Psychologist",
     description:
       "Evidence-based psychotherapy for anxiety, depression, and life transitions.",
     type: "website",
@@ -18,10 +18,16 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geist.className} antialiased bg-white text-stone-800`}>
+      <body
+        className={`${geist.className} antialiased bg-white text-stone-800`}
+      >
         {children}
       </body>
     </html>
